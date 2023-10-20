@@ -9,7 +9,7 @@ function App() {
             <h1 className = "title">REACTIVE WEATHER</h1>
             <h3 className = "subtitle">Up to the minute weather news</h3>
             <div className = "app">
-            {cities.map(city=> (<WeatherCard data = {city}/>))}
+            {cities.map((city,index)=> (<WeatherCard data = {city} keys={index}/>))}
             </div>
             <h4>its working</h4>
         </>
