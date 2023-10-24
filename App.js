@@ -4,6 +4,7 @@ import WeatherCard from './components/WeatherCard';
 import cities from './data';
 import { useState } from 'react';
 import Location from './components/Location';
+import Form from './components/Form';
 import sunny from "./assets/Sunny.svg";
 import cloudy from "./assets/Cloudy.svg";
 import rainy from "./assets/Rainy.svg";
@@ -31,11 +32,11 @@ function App() {
         <>
             <h3 className = "title">REACTIVE WEATHER</h3>
             <h3 className = "subtitle">Up to the minute weather news</h3>
+            <Form location={location} setLocation={setLocation}/>
+            <Location data={cities} location = {location} setLocation={setLocation} images={() => images(location, cities)}/>
             <div className = "app">
             {cities.map((city,index)=> (<WeatherCard data = {city} keys={index} images={() => images(city.city, cities)}/>))}
             </div>
-            <Location data={cities} location = {location} setLocation={setLocation} images={() => images(location, cities)}/>
-            <h4>its working</h4>
         </>
     )
 }

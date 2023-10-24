@@ -7,6 +7,7 @@ function Location(props) {
 
   return (
     <>
+    { myCity ?(
      <div className = "card">
       <h2>Your Location's Weather</h2>
         <div className = "img-container">
@@ -18,6 +19,7 @@ function Location(props) {
             <h5 className="card-text">{myCity.forecast}</h5>
         </div>
     </div>
+    ): (<h2>Location not found. Please try a new Location</h2>)}
     </>
   )
 };
